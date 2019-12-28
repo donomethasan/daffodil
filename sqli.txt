@@ -62,6 +62,8 @@ waf bypass:
 
 don/**/omet/**/hasan
 
+https://www.owasp.org/index.php/SQL_Injection_Bypassing_WAF
+
 
 sqlmap command with cookie
 
